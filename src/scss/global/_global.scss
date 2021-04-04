@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+
+  font-size: 10px;
+}
+
+body {
+
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: $mainFont;
+  color: $mainTextColor;
+
+  overflow-x: hidden;
+}
