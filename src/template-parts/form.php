@@ -2,7 +2,7 @@
 $licences = getLicense(); ?>
 
 <section class="form-block">
-    <form class="form" action="">
+    <form class="form" method="POST">
         <ul class="form__combobox combobox">
             <?
             $i = 1;

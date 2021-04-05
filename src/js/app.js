@@ -37,4 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function calcCost(box, cost, count) {
         box.innerText = +cost * +count;
     }
+
+    // Reply after sending
+    let form = document.querySelector('.form');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        let formData = new FormData(form);
+
+        let response = await fetch('send.php', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+        .then(data => {
+            if (data.res) {
+                form.innerHTML = 'Your application has been sent!' + '<p> Licence Plan #' + data.licenseId + '</p><p>Quantity: ' + data.quantityLicense + '</p>';
+            }
+        })
+    })
 });
